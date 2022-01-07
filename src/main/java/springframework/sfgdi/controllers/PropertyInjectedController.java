@@ -1,13 +1,15 @@
 package springframework.sfgdi.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import springframework.sfgdi.services.GreetingService;
 
 
 @Controller
-public class PropertyInjectionController {
+public class PropertyInjectedController {
 
+    @Qualifier("propertyInjectorGreetingService")
     @Autowired
     public GreetingService greetingService;
 

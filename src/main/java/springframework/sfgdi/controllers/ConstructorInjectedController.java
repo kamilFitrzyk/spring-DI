@@ -1,17 +1,16 @@
 package springframework.sfgdi.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import springframework.sfgdi.services.GreetingService;
-import springframework.sfgdi.services.GreetingServiceImpl;
 
 @Controller
-public class ConstructorInjectionController {
+public class ConstructorInjectedController {
 
     private final GreetingService greetingService;
 
 
-    public ConstructorInjectionController(GreetingService greetingService) {
+    public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
